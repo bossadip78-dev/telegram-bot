@@ -42,7 +42,9 @@ SUPPORTED_LANGUAGES = {
     "sp": "Español",
     "fr": "Français",
     "ru": "Русский",
-    "ar": "العربية"
+    "ar": "العربية",
+    "bn": "বাংলা",
+    "hi": "हिन्दी"
 }
 DEFAULT_LANGUAGE = "en"
 
@@ -52,7 +54,9 @@ def get_default_persona(language):
         "sp": "Eres un asistente útil que habla español. Sé amable y servicial en tus respuestas.",
         "fr": "Vous êtes un assistant utile qui parle français. Soyez amical et serviable dans vos réponses.",
         "ru": "Вы полезный помощник, который говорит на русском языке. Будьте дружелюбны и полезны в своих ответах.",
-        "ar": "أنت مساعد مفيد يتحدث اللغة العربية. كن لطيفًا ومفيدًا في ردودك."
+        "ar": "أنت مساعد مفيد يتحدث اللغة العربية. كن لطيفًا ومفيدًا في ردودك.",
+        "bn": "আপনি একজন সহায়ক সহকারী যিনি বাংলায় কথা বলেন। আপনার উত্তরে বন্ধুত্বপূর্ণ এবং সহায়ক হন।",
+        "hi": "आप एक सहायक सहायक हैं जो हिंदी बोलते हैं। अपने उत्तरों में मित्रवत और सहायक रहें।"
     }
     return personas.get(language, personas["en"])
 
@@ -77,6 +81,8 @@ LANGUAGE_STRINGS = {
 /fr - Set language to French
 /ru - Set language to Russian
 /ar - Set language to Arabic
+/bn - Set language to Bengali
+/hi - Set language to Hindi
 💡 **Bot Features:**
 - Remembers your previous conversation (for 2 days)
 - Saves up to 100 messages in conversation
@@ -89,130 +95,72 @@ LANGUAGE_STRINGS = {
 - Permanent data storage system
 - Rating and feedback system
 - Server monitoring and automatic downtime detection""",
-        "sp": """🎯 **Comandos disponibles:**
-/start - Iniciar conversación
-/help - Mostrar todos los comandos
-/clear - Borrar historial de conversación
-/think - Pensamiento profundo sobre texto específico
-/think_full - Analizar los últimos 10 mensajes
-/customize - Personalizar personalidad del bot
-/mystats - Mostrar tus estadísticas
-/web - Búsqueda en internet
-/users_info - Estadísticas de usuarios
-/feedback - Enviar tu opinión sobre el bot
-/credits - Información del desarrollador
-/server_info - Información del servidor
-🌐 **Configuración de idioma:**
-/en - Establecer idioma a inglés
-/sp - Establecer idioma a español
-/fr - Establecer idioma a francés
-/ru - Establecer idioma a ruso
-/ar - Establecer idioma a árabe
-💡 **Características del bot:**
-- Recuerda tu conversación anterior (por 2 días)
-- Guarda hasta 100 mensajes en la conversación
-- Soporte excelente para varios idiomas
-- Modo de pensamiento profundo para respuestas precisas
-- Personaliza la personalidad del bot como desees
-- Sistema de procesamiento avanzado (10 etapas de análisis)
-- Sistema de preajustes para guardar personalidades personalizadas
-- Búsqueda avanzada en internet
-- Sistema de almacenamiento permanente
-- Sistema de calificación y comentarios
-- Monitoreo del servidor y detección automática de caídas""",
-        "fr": """🎯 **Commandes disponibles :**
-/start - Démarrer la conversation
-/help - Afficher toutes les commandes
-/clear - Effacer l'historique de conversation
-/think - Réflexion approfondie sur un texte spécifique
-/think_full - Analyser les 10 derniers messages
-/customize - Personnaliser la personnalité du bot
-/mystats - Afficher vos statistiques
-/web - Recherche sur Internet
-/users_info - Statistiques des utilisateurs
-/feedback - Envoyer votre avis sur le bot
-/credits - Informations sur le développeur
-/server_info - Informations sur le serveur
-🌐 **Paramètres de langue :**
-/en - Définir la langue sur l'anglais
-/sp - Définir la langue sur l'espagnol
-/fr - Définir la langue sur le français
-/ru - Définir la langue sur le russe
-/ar - Définir la langue sur l'arabe
-💡 **Fonctionnalités du bot :**
-- Se souvient de votre conversation précédente (pendant 2 jours)
-- Enregistre jusqu'à 100 messages dans la conversation
-- Excellent support multilingue
-- Mode de réflexion approfondie pour des réponses précises
-- Personnalisez la personnalité du bot comme vous le souhaitez
-- Système de traitement avancé (10 étapes d'analyse)
-- Système de préréglages pour enregistrer des personnalités personnalisées
-- Recherche Internet avancée
-- Système de stockage permanent
-- Système d'évaluation et de commentaires
-- Surveillance du serveur et détection automatique des pannes""",
-        "ru": """🎯 **Доступные команды бота:**
-/start - Начать разговор
-/help - Показать все команды
-/clear - Очистить историю разговора
-/think - Глубокое осмысление конкретного текста
-/think_full - Проанализировать последние 10 сообщений
-/customize - Настроить личность бота
-/mystats - Показать вашу статистику
-/web - Поиск в интернете
-/users_info - Статистика пользователей
-/feedback - Отправить ваше мнение о боте
-/credits - Информация о разработчике
-/server_info - Информация о сервере
-🌐 **Настройки языка:**
-/en - Установить язык на английский
-/sp - Установить язык на испанский
-/fr - Установить язык на французский
-/ru - Установить язык на русский
-/ar - Установить язык на арабский
-💡 **Функции бота:**
-- Запоминает ваш предыдущий разговор (на 2 дня)
-- Сохраняет до 100 сообщений в разговоре
-- Отличная поддержка нескольких языков
-- Режим глубокого осмысления для точных ответов
-- Настройте личность бота по вашему желанию
-- Расширенная система обработки (10 этапов анализа)
-- Система предустановок для сохранения пользовательских личностей
-- Расширенный поиск в интернете
-- Постоянная система хранения данных
-- Система рейтинга и обратной связи
-- Мониторинг сервера и автоматическое обнаружение простоев""",
-        "ar": """🎯 **الاوامر المتاحة:**
-/start - بدء المحادثة
-/help - اظهار جميع الاوامر
-/clear - مسح ذاكرة المحادثة
-/think - تفكير عميق في نص محدد
-/think_full - تحليل اخر 10 رسائل
-/customize - تخصيص شخصية البوت
-/mystats - اظهار احصائياتك
-/web - بحث في الانترنت
-/users_info - احصائيات المستخدمين
-/feedback - ارسل رأيك عن البوت
-/credits - معلومات المطور
-/server_info - معلومات السيرفر
-🌐 **اعدادات اللغة:**
-/en - تغيير اللغة إلى الانجليزية
-/sp - تغيير اللغة إلى الاسبانية
-/fr - تغيير اللغة إلى الفرنسية
-/ru - تغيير اللغة إلى الروسية
-/ar - تغيير اللغة إلى العربية
-💡 **مميزات البوت:**
-- يتذكر محادثتك السابقة (لمدة يومين)
-- يحفظ حتى 100 رسالة في المحادثة
-- دعم ممتاز لعدة لغات
-- وضع التفكير العميق للحصول على ردود دقيقة
-- تخصيص شخصية البوت كما تشاء
-- نظام معالجة متقدم (10 مراحل تحليل)
-- نظام الـ Presets لحفظ الشخصيات المخصصة
-- بحث متقدم في الانترنت
-- نظام تخزين دائم
-- نظام تقييم وارسال ملاحظات
-- مراقبة السيرفر وكشف فترات التوقف تلقائياً"""
+        "bn": """🎯 **উপলব্ধ বট কমান্ডসমূহ:**
+/start - কথোপকথন শুরু করুন
+/help - সব কমান্ড দেখুন
+/clear - কথোপকথনের মেমোরি মুছুন
+/think - নির্দিষ্ট টেক্সটে গভীর চিন্তা করুন
+/think_full - শেষ ১০টি মেসেজ বিশ্লেষণ করুন
+/customize - বটের ব্যক্তিত্ব কাস্টমাইজ করুন
+/mystats - আপনার পরিসংখ্যান দেখুন
+/web - ইন্টারনেট অনুসন্ধান
+/users_info - ব্যবহারকারীদের পরিসংখ্যান
+/feedback - বট সম্পর্কে আপনার মতামত দিন
+/credits - ডেভেলপারের তথ্য
+/server_info - সার্ভারের তথ্য
+🌐 **ভাষা সেটিংস:**
+/en - ইংরেজিতে সেট করুন
+/sp - স্প্যানিশে সেট করুন
+/fr - ফ্রেঞ্চে সেট করুন
+/ru - রুশ ভাষায় সেট করুন
+/ar - আরবিতে সেট করুন
+/bn - বাংলায় সেট করুন
+/hi - হিন্দিতে সেট করুন
+💡 **বটের বৈশিষ্ট্য:**
+- আপনার আগের কথোপকথন মনে রাখে (২ দিন পর্যন্ত)
+- ১০০টি মেসেজ পর্যন্ত সংরক্ষণ করে
+- চমৎকার ভাষা সমর্থন
+- নির্ভুল উত্তরের জন্য গভীর চিন্তা মোড
+- ইচ্ছেমতো বটের ব্যক্তিত্ব কাস্টমাইজ করুন
+- অ্যাডভান্সড প্রসেসিং সিস্টেম (১০টি বিশ্লেষণ স্তর)
+- কাস্টম পার্সোনালিটি সংরক্ষণের প্রিসেট সিস্টেম
+- অ্যাডভান্সড ইন্টারনেট সার্চ
+- স্থায়ী ডেটা সংরক্ষণ ব্যবস্থা
+- রেটিং ও ফিডব্যাক সিস্টেম
+- সার্ভার মনিটরিং ও স্বয়ংক্রিয় ডাউনটাইম সনাক্তকরণ""",
+        "hi": """🎯 **उपलब्ध बॉट कमांड्स:**
+/start - बातचीत शुरू करें
+/help - सभी कमांड देखें
+/clear - बातचीत मेमोरी साफ़ करें
+/think - विशिष्ट टेक्स्ट पर गहन विचार करें
+/think_full - अंतिम 10 संदेशों का विश्लेषण करें
+/customize - बॉट की व्यक्तित्व कस्टमाइज़ करें
+/mystats - अपने आंकड़े देखें
+/web - इंटरनेट खोज
+/users_info - उपयोगकर्ता आंकड़े
+/feedback - बॉट के बारे में अपनी राय दें
+/credits - डेवलपर जानकारी
+/server_info - सर्वर जानकारी
+🌐 **भाषा सेटिंग्स:**
+/en - अंग्रेज़ी में सेट करें
+/sp - स्पेनिश में सेट करें
+/fr - फ्रेंच में सेट करें
+/ru - रूसी में सेट करें
+/ar - अरबी में सेट करें
+/bn - बांग्ला में सेट करें
+/hi - हिंदी में सेट करें
+💡 **बॉट की विशेषताएं:**
+- आपकी पिछली बातचीत याद रखता है (2 दिन तक)
+- 100 संदेशों तक सहेजता है
+- उत्कृष्ट भाषा समर्थन
+- सटीक उत्तर के लिए गहन चिंतन मोड
+- अपनी इच्छानुसार बॉट व्यक्तित्व कस्टमाइज़ करें
+- उन्नत प्रोसेसिंग सिस्टम (10 विश्लेषण चरण)
+- कस्टम व्यक्तित्व सहेजने के लिए प्रीसैट सिस्टम
+- उन्नत इंटरनेट खोज
+- स्थायी डेटा भंडारण प्रणाली
+- रेटिंग और फीडबैक सिस्टम
+- सर्वर निगरानी और स्वचालित डाउनटाइम पहचान"""
     },
     "help_message": {
         "en": """🎯 **Available Bot Commands:**
@@ -235,6 +183,8 @@ LANGUAGE_STRINGS = {
 /fr - Set language to French
 /ru - Set language to Russian
 /ar - Set language to Arabic
+/bn - Set language to Bengali
+/hi - Set language to Hindi
 📊 **Statistics:**
 /mystats - Show your statistics
 /users_info - General user statistics
@@ -248,756 +198,321 @@ LANGUAGE_STRINGS = {
 - Learns from your preferences
 - Saves up to 10 custom personalities
 - Permanent data storage system""",
-        "sp": """🎯 **Comandos disponibles:**
-/start - Iniciar conversación
-/help - Mostrar todos los comandos
-/clear - Borrar historial de conversación
-🤔 **Características avanzadas de pensamiento:**
-/think [texto] - Pensamiento profundo sobre texto específico (genera 10 respuestas y las fusiona)
-/think_full - Analizar los últimos 10 mensajes y responder punto por punto
-🎭 **Personalización de personalidad:**
-/customize - Personalizar personalidad del bot y guardar como preajuste
-/customize /s - Guardar personalización actual como preajuste
-/customize /t [título] - Agregar título al preajuste
-/customize /list - Mostrar todos los preajustes guardados
-🔍 **Búsqueda en Internet:**
-/web [consulta] - Buscar en más de 20 fuentes confiables
-🌐 **Configuración de idioma:**
-/en - Establecer idioma a inglés
-/sp - Establecer idioma a español
-/fr - Establecer idioma a francés
-/ru - Establecer idioma a ruso
-/ar - Establecer idioma a árabe
-📊 **Estadísticas:**
-/mystats - Mostrar tus estadísticas
-/users_info - Estadísticas generales de usuarios
-/server_info - Información del servidor y rendimiento
-⭐ **Calificación y comentarios:**
-/feedback [tu opinión] - Enviar tu opinión sobre el bot (una vez cada 5 días)
-/credits - Información del desarrollador
-💾 **Características de memoria:**
-- Recuerda 100 mensajes completos
-- Guarda la conversación durante 2 días
-- Aprende de tus preferencias
-- Guarda hasta 10 personalidades personalizadas
-- Sistema de almacenamiento permanente""",
-        "fr": """🎯 **Commandes disponibles :**
-/start - Démarrer la conversation
-/help - Afficher toutes les commandes
-/clear - Effacer l'historique de conversation
-🤔 **Fonctionnalités avancées de réflexion :**
-/think [texte] - Réflexion approfondie sur un texte spécifique (génère 10 réponses et les fusionne)
-/think_full - Analyser les 10 derniers messages et répondre point par point
-🎭 **Personnalisation de la personnalité :**
-/customize - Personnaliser la personnalité du bot et enregistrer comme préréglage
-/customize /s - Enregistrer la personnalisation actuelle comme préréglage
-/customize /t [titre] - Ajouter un titre au préréglage
-/customize /list - Afficher tous les préréglages enregistrés
-🔍 **Recherche sur Internet :**
-/web [requête] - Rechercher dans plus de 20 sources fiables
-🌐 **Paramètres de langue :**
-/en - Définir la langue sur l'anglais
-/sp - Définir la langue sur l'espagnol
-/fr - Définir la langue sur le français
-/ru - Définir la langue sur le russe
-/ar - Définir la langue sur l'arabe
-📊 **Statistiques :**
-/mystats - Afficher vos statistiques
-/users_info - Statistiques générales des utilisateurs
-/server_info - Informations sur le serveur et les performances
-⭐ **Évaluation et commentaires :**
-/feedback [votre avis] - Envoyer votre avis sur le bot (une fois tous les 5 jours)
-/credits - Informations sur le développeur
-💾 **Fonctionnalités de mémoire :**
-- Se souvient de 100 messages complets
-- Enregistre la conversation pendant 2 jours
-- Apprend de vos préférences
-- Enregistre jusqu'à 10 personnalités personnalisées
-- Système de stockage permanent""",
-        "ru": """🎯 **Доступные команды бота:**
-/start - Начать разговор
-/help - Показать все команды
-/clear - Очистить историю разговора
-🤔 **Расширенные функции мышления:**
-/think [текст] - Глубокое осмысление конкретного текста (генерирует 10 ответов и объединяет их)
-/think_full - Проанализировать последние 10 сообщений и ответить по пунктам
-🎭 **Настройка личности:**
-/customize - Настроить личность бота и сохранить как предустановку
-/customize /s - Сохранить текущую настройку как предустановку
-/customize /t [название] - Добавить название к предустановке
-/customize /list - Показать все сохраненные предустановки
-🔍 **Поиск в интернете:**
-/web [запрос] - Поиск в более чем 20 надежных источниках
-🌐 **Настройки языка:**
-/en - Установить язык на английский
-/sp - Установить язык на испанский
-/fr - Установить язык на французский
-/ru - Установить язык на русский
-/ar - Установить язык на арабский
-📊 **Статистика:**
-/mystats - Показать вашу статистику
-/users_info - Общая статистика пользователей
-/server_info - Информация о сервере и производительности
-⭐ **Оценка и отзывы:**
-/feedback [ваше мнение] - Отправить ваше мнение о боте (раз в 5 дней)
-/credits - Информация о разработчике
-💾 **Функции памяти:**
-- Запоминает 100 полных сообщений
-- Сохраняет разговор на 2 дня
-- Учится на ваших предпочтениях
-- Сохраняет до 10 пользовательских личностей
-- Постоянная система хранения данных""",
-        "ar": """🎯 **الاوامر المتاحة:**
-/start - بدء المحادثة
-/help - اظهار جميع الاوامر
-/clear - مسح ذاكرة المحادثة
-🤔 **مميزات التفكير المتقدم:**
-/think [نص] - تفكير عميق في نص محدد (يولد 10 ردود ويقوم بدمجها)
-/think_full - تحليل اخر 10 رسائل والرد نقطة بنقطة
-🎭 **تخصيص الشخصية:**
-/customize - تخصيص شخصية البوت وحفظها كـ Preset
-/customize /s - حفظ التخصيص الحالي كـ Preset
-/customize /t [عنوان] - اضافة عنوان للـ Preset
-/customize /list - اظهار جميع الـ Presets المحفوظة
-🔍 **بحث في الانترنت:**
-/web [استعلام] - بحث في اكثر من 20 مصدر موثوق
-🌐 **اعدادات اللغة:**
-/en - تغيير اللغة إلى الانجليزية
-/sp - تغيير اللغة إلى الاسبانية
-/fr - تغيير اللغة إلى الفرنسية
-/ru - تغيير اللغة إلى الروسية
-/ar - تغيير اللغة إلى العربية
-📊 **الاحصائيات:**
-/mystats - اظهار احصائياتك
-/users_info - احصائيات عامة للمستخدمين
-/server_info - معلومات السيرفر والاداء
-⭐ **التقييم والملاحظات:**
-/feedback [رايك] - ارسل رأيك عن البوت (مرة كل 5 ايام)
-/credits - معلومات المطور
-💾 **مميزات الذاكرة:**
-- يتذكر 100 رسالة كاملة
-- يحفظ المحادثة لمدة يومين
-- يتعلم من تفضيلاتك
-- يحفظ حتى 10 شخصيات مخصصة
-- نظام تخزين دائم"""
+        "bn": """🎯 **উপলব্ধ বট কমান্ডসমূহ:**
+/start - কথোপকথন শুরু করুন
+/help - সব কমান্ড দেখুন
+/clear - কথোপকথনের মেমোরি মুছুন
+🤔 **উন্নত চিন্তা বৈশিষ্ট্য:**
+/think [টেক্সট] - নির্দিষ্ট টেক্সটে গভীর চিন্তা (১০টি উত্তর তৈরি ও মার্জ করে)
+/think_full - শেষ ১০টি মেসেজ বিশ্লেষণ ও পয়েন্ট বাই পয়েন্ট উত্তর
+🎭 **ব্যক্তিত্ব কাস্টমাইজেশন:**
+/customize - বটের ব্যক্তিত্ব কাস্টমাইজ ও প্রিসেট হিসেবে সেভ
+/customize /s - বর্তমান কাস্টমাইজেশন প্রিসেট হিসেবে সেভ
+/customize /t [শিরোনাম] - প্রিসেটে শিরোনাম যোগ
+/customize /list - সব সংরক্ষিত প্রিসেট দেখান
+🔍 **ইন্টারনেট অনুসন্ধান:**
+/web [কুয়েরি] - ২০+টি নির্ভরযোগ্য সোর্সে অনুসন্ধান
+🌐 **ভাষা সেটিংস:**
+/en - ইংরেজিতে সেট করুন
+/sp - স্প্যানিশে সেট করুন
+/fr - ফ্রেঞ্চে সেট করুন
+/ru - রুশ ভাষায় সেট করুন
+/ar - আরবিতে সেট করুন
+/bn - বাংলায় সেট করুন
+/hi - হিন্দিতে সেট করুন
+📊 **পরিসংখ্যান:**
+/mystats - আপনার পরিসংখ্যান দেখুন
+/users_info - সাধারণ ব্যবহারকারী পরিসংখ্যান
+/server_info - সার্ভার ও পারফরম্যান্স তথ্য
+⭐ **রেটিং ও ফিডব্যাক:**
+/feedback [আপনার মতামত] - বট সম্পর্কে আপনার মতামত দিন (প্রতি ৫ দিনে একবার)
+/credits - ডেভেলপারের তথ্য
+💾 **মেমোরি বৈশিষ্ট্য:**
+- ১০০টি সম্পূর্ণ মেসেজ মনে রাখে
+- ২ দিন পর্যন্ত কথোপকথন সংরক্ষণ করে
+- আপনার পছন্দ থেকে শেখে
+- ১০টি কাস্টম ব্যক্তিত্ব সংরক্ষণ করে
+- স্থায়ী ডেটা সংরক্ষণ ব্যবস্থা""",
+        "hi": """🎯 **उपलब्ध बॉट कमांड्स:**
+/start - बातचीत शुरू करें
+/help - सभी कमांड देखें
+/clear - बातचीत मेमोरी साफ़ करें
+🤔 **उन्नत विचार सुविधाएँ:**
+/think [टेक्स्ट] - विशिष्ट टेक्स्ट पर गहन विचार (10 उत्तर उत्पन्न करता है और उन्हें मर्ज करता है)
+/think_full - अंतिम 10 संदेशों का विश्लेषण करें और बिंदुवार उत्तर दें
+🎭 **व्यक्तित्व कस्टमाइज़ेशन:**
+/customize - बॉट व्यक्तित्व कस्टमाइज़ करें और प्रीसैट के रूप में सहेजें
+/customize /s - वर्तमान कस्टमाइज़ेशन को प्रीसैट के रूप में सहेजें
+/customize /t [शीर्षक] - प्रीसैट में शीर्षक जोड़ें
+/customize /list - सभी सहेजे गए प्रीसैट दिखाएं
+🔍 **इंटरनेट खोज:**
+/web [क्वेरी] - 20 से अधिक विश्वसनीय स्रोतों में खोजें
+🌐 **भाषा सेटिंग्स:**
+/en - अंग्रेज़ी में सेट करें
+/sp - स्पेनिश में सेट करें
+/fr - फ्रेंच में सेट करें
+/ru - रूसी में सेट करें
+/ar - अरबी में सेट करें
+/bn - बांग्ला में सेट करें
+/hi - हिंदी में सेट करें
+📊 **आंकड़े:**
+/mystats - अपने आंकड़े देखें
+/users_info - सामान्य उपयोगकर्ता आंकड़े
+/server_info - सर्वर और प्रदर्शन जानकारी
+⭐ **रेटिंग और फीडबैक:**
+/feedback [आपकी राय] - बॉट के बारे में अपनी राय दें (हर 5 दिन में एक बार)
+/credits - डेवलपर जानकारी
+💾 **मेमोरी सुविधाएँ:**
+- 100 पूर्ण संदेश याद रखता है
+- 2 दिनों तक बातचीत सहेजता है
+- आपकी प्राथमिकताओं से सीखता है
+- 10 कस्टम व्यक्तित्व सहेजता है
+- स्थायी डेटा भंडारण प्रणाली"""
     },
     "clear_message": {
         "en": "✅ **Conversation memory cleared!** We started a new conversation.",
-        "sp": "✅ **Historial de conversación borrado!** Hemos comenzado una nueva conversación.",
-        "fr": "✅ **Historique de conversation effacé !** Nous avons commencé une nouvelle conversation.",
-        "ru": "✅ **История разговора очищена!** Мы начали новый разговор.",
-        "ar": "✅ **تم مسح ذاكرة المحادثة!** لقد بدأنا محادثة جديدة."
+        "bn": "✅ **কথোপকথনের মেমোরি মুছে ফেলা হয়েছে!** আমরা নতুন কথোপকথন শুরু করলাম।",
+        "hi": "✅ **बातचीत मेमोरी साफ़ हो गई!** हमने नई बातचीत शुरू की।"
     },
     "cleanup_message": {
         "en": "🧹 **Conversation cleaned**\n🗑️ Deleted {count} old messages\n💾 Your settings and presets were preserved",
-        "sp": "🧹 **Conversación limpiada**\n🗑️ Eliminados {count} mensajes antiguos\n💾 Tus ajustes y preajustes se han conservado",
-        "fr": "🧹 **Conversation nettoyée**\n🗑️ {count} anciens messages supprimés\n💾 Vos paramètres et préréglages ont été préservés",
-        "ru": "🧹 **Беседа очищена**\n🗑️ Удалено {count} старых сообщений\n💾 Ваши настройки и предустановки сохранены",
-        "ar": "🧹 **تم تنظيف المحادثة**\n🗑️ تم حذف {count} رسالة قديمة\n💾 تم الحفاظ على إعداداتك والـ Presets"
+        "bn": "🧹 **কথোপকথন পরিষ্কার করা হয়েছে**\n🗑️ {count}টি পুরোনো মেসেজ মুছে ফেলা হয়েছে\n💾 আপনার সেটিংস ও প্রিসেট সংরক্ষণ করা হয়েছে",
+        "hi": "🧹 **बातचीत साफ़ की गई**\n🗑️ {count} पुराने संदेश हटाए गए\n💾 आपकी सेटिंग्स और प्रीसैट सहेजे गए"
     },
     "downtime_message": {
         "en": "🤖 **Bot is currently offline**\n⏰ **Downtime:** {duration}\n📨 All your messages will be answered when the bot returns\n🔔 You will be notified when the bot is back online",
-        "sp": "🤖 **El bot está actualmente fuera de línea**\n⏰ **Tiempo fuera:** {duration}\n📨 Todos tus mensajes serán respondidos cuando el bot regrese\n🔔 Serás notificado cuando el bot vuelva a estar en línea",
-        "fr": "🤖 **Le bot est actuellement hors ligne**\n⏰ **Temps d'arrêt :** {duration}\n📨 Tous vos messages seront répondus lorsque le bot reviendra\n🔔 Vous serez notifié lorsque le bot sera de retour en ligne",
-        "ru": "🤖 **Бот в настоящее время отключен**\n⏰ **Время простоя:** {duration}\n📨 Все ваши сообщения будут ответлены, когда бот вернется\n🔔 Вы будете уведомлены, когда бот снова заработает",
-        "ar": "🤖 **البوت غير متصل حالياً**\n⏰ **فترة التوقف:** {duration}\n📨 سيتم الرد على جميع رسائلك عندما يعود البوت\n🔔 سيتم إعلامك عندما يعود البوت إلى الإنترنت"
+        "bn": "🤖 **বট বর্তমানে অফলাইন**\n⏰ **ডাউনটাইম:** {duration}\n📨 বট ফিরে এলে আপনার সব মেসেজের উত্তর দেওয়া হবে\n🔔 বট অনলাইনে ফিরলে আপনাকে জানানো হবে",
+        "hi": "🤖 **बॉट वर्तमान में ऑफलाइन है**\n⏰ **डाउनटाइम:** {duration}\n📨 बॉट वापस आने पर आपके सभी संदेशों का उत्तर दिया जाएगा\n🔔 बॉट वापस ऑनलाइन आने पर आपको सूचित किया जाएगा"
     },
     "back_online_message": {
         "en": "🤖 Bot is back online!\n⏰ Downtime: {duration}\n📨 All your messages will be processed now",
-        "sp": "🤖 ¡El bot está de vuelta en línea!\n⏰ Tiempo fuera: {duration}\n📨 Todos tus mensajes serán procesados ahora",
-        "fr": "🤖 Le bot est de retour en ligne !\n⏰ Temps d'arrêt : {duration}\n📨 Tous vos messages seront traités maintenant",
-        "ru": "🤖 Бот снова в сети!\n⏰ Время простоя: {duration}\n📨 Все ваши сообщения будут обработаны сейчас",
-        "ar": "🤖 البوت عاد إلى الإنترنت!\n⏰ فترة التوقف: {duration}\n📨 سيتم معالجة جميع رسائلك الآن"
+        "bn": "🤖 বট আবার অনলাইনে ফিরেছে!\n⏰ ডাউনটাইম: {duration}\n📨 আপনার সব মেসেজ এখন প্রসেস করা হবে",
+        "hi": "🤖 बॉट वापस ऑनलाइन है!\n⏰ डाउनटाइम: {duration}\n📨 आपके सभी संदेश अब प्रोसेस किए जाएंगे"
     },
     "think_full_analysis": {
         "en": "📊 **Deep analysis of last {count} messages:**\n{response}",
-        "sp": "📊 **Análisis profundo de los últimos {count} mensajes:**\n{response}",
-        "fr": "📊 **Analyse approfondie des {count} derniers messages :**\n{response}",
-        "ru": "📊 **Глубокий анализ последних {count} сообщений:**\n{response}",
-        "ar": "📊 **تحليل عميق لأخر {count} رسائل:**\n{response}"
+        "bn": "📊 **শেষ {count}টি মেসেজের গভীর বিশ্লেষণ:**\n{response}",
+        "hi": "📊 **अंतिम {count} संदेशों का गहन विश्लेषण:**\n{response}"
     },
     "no_messages_to_analyze": {
         "en": "❌ No recent messages to analyze.",
-        "sp": "❌ No hay mensajes recientes para analizar.",
-        "fr": "❌ Aucun message récent à analyser.",
-        "ru": "❌ Нет недавних сообщений для анализа.",
-        "ar": "❌ لا توجد رسائل حديثة لتحليلها."
+        "bn": "❌ বিশ্লেষণ করার মতো কোনো সাম্প্রতিক মেসেজ নেই।",
+        "hi": "❌ विश्लेषण करने के लिए कोई हालिया संदेश नहीं।"
     },
     "deep_thinking": {
         "en": "🤔 **Deep thinking... {progress}%** (This may take up to 2 minutes)",
-        "sp": "🤔 **Pensamiento profundo... {progress}%** (Esto puede tardar hasta 2 minutos)",
-        "fr": "🤔 **Réflexion approfondie... {progress}%** (Cela peut prendre jusqu'à 2 minutes)",
-        "ru": "🤔 **Глубокое осмысление... {progress}%** (Это может занять до 2 минут)",
-        "ar": "🤔 **تفكير عميق... {progress}%** (قد يستغرق حتى دقيقتين)"
+        "bn": "🤔 **গভীর চিন্তা করছি... {progress}%** (এতে ২ মিনিট পর্যন্ত সময় লাগতে পারে)",
+        "hi": "🤔 **गहन विचार कर रहा हूँ... {progress}%** (इसमें 2 मिनट तक लग सकते हैं)"
     },
     "deep_thinking_result": {
         "en": "💭 **Deep thinking result (10 perspectives):**\n{response}",
-        "sp": "💭 **Resultado del pensamiento profundo (10 perspectivas):**\n{response}",
-        "fr": "💭 **Résultat de la réflexion approfondie (10 perspectives) :**\n{response}",
-        "ru": "💭 **Результат глубокого осмысления (10 перспектив):**\n{response}",
-        "ar": "💭 **نتيجة التفكير العميق (10 وجهات نظر):**\n{response}"
+        "bn": "💭 **গভীর চিন্তার ফলাফল (১০টি দৃষ্টিকোণ থেকে):**\n{response}",
+        "hi": "💭 **गहन विचार का परिणाम (10 परिप्रेक्ष्य):**\n{response}"
     },
     "web_searching": {
         "en": "🔍 **Searching the internet...**",
-        "sp": "🔍 **Buscando en internet...**",
-        "fr": "🔍 **Recherche sur Internet...**",
-        "ru": "🔍 **Поиск в интернете...**",
-        "ar": "🔍 **جاري البحث في الانترنت...**"
+        "bn": "🔍 **ইন্টারনেটে অনুসন্ধান করছি...**",
+        "hi": "🔍 **इंटरनेट पर खोज रहा हूँ...**"
     },
     "web_results": {
         "en": "🌐 **Search results for: '{query}'**\n{response}",
-        "sp": "🌐 **Resultados de búsqueda para: '{query}'**\n{response}",
-        "fr": "🌐 **Résultats de recherche pour : '{query}'**\n{response}",
-        "ru": "🌐 **Результаты поиска для: '{query}'**\n{response}",
-        "ar": "🌐 **نتائج البحث عن: '{query}'**\n{response}"
+        "bn": "🌐 **'{query}' এর জন্য অনুসন্ধান ফলাফল:**\n{response}",
+        "hi": "🌐 **'{query}' के लिए खोज परिणाम:**\n{response}"
     },
     "customization_start": {
         "en": "🎭 **Bot Personality Customization**\nSend /customize followed by the new personality description.\nExample: /customize You are a chemistry doctor specialized in medical analysis\nOr choose from the options below:",
-        "sp": "🎭 **Personalización de la personalidad del bot**\nEnvía /customize seguido de la nueva descripción de personalidad.\nEjemplo: /customize Eres un doctor en química especializado en análisis médicos\nO elige una de las opciones a continuación:",
-        "fr": "🎭 **Personnalisation de la personnalité du bot**\nEnvoyez /customize suivi de la nouvelle description de personnalité.\nExemple : /customize Vous êtes un docteur en chimie spécialisé dans l'analyse médicale\nOu choisissez parmi les options ci-dessous :",
-        "ru": "🎭 **Настройка личности бота**\nОтправьте /customize с новым описанием личности.\nПример: /customize Вы - доктор химии, специализирующийся на медицинском анализе\nИли выберите из вариантов ниже:",
-        "ar": "🎭 **تخصيص شخصية البوت**\nأرسل /customize متبوعاً بوصف الشخصية الجديدة.\nمثال: /customize أنت دكتور كيمياء متخصص في التحليلات الطبية\nأو اختر من الخيارات أدناه:"
+        "bn": "🎭 **বটের ব্যক্তিত্ব কাস্টমাইজেশন**\n/customize এর পরে নতুন ব্যক্তিত্বের বিবরণ পাঠান।\nউদাহরণ: /customize আপনি একজন রসায়ন ডাক্তার যিনি চিকিৎসা বিশ্লেষণে বিশেষজ্ঞ\nঅথবা নিচের অপশন থেকে বেছে নিন:",
+        "hi": "🎭 **बॉट व्यक्तित्व कस्टमाइज़ेशन**\n/customize के बाद नया व्यक्तित्व विवरण भेजें।\nउदाहरण: /customize आप एक रसायन विज्ञान डॉक्टर हैं जो चिकित्सा विश्लेषण में विशेषज्ञ हैं\nया नीचे दिए गए विकल्पों में से चुनें:"
     },
     "customization_saved": {
         "en": "✅ **Current customization saved as new preset!**\n**Title:** {title}\nYou can change the title using /customize /t [new title]",
-        "sp": "✅ **¡Personalización actual guardada como nuevo preajuste!**\n**Título:** {title}\nPuedes cambiar el título usando /customize /t [nuevo título]",
-        "fr": "✅ **Personnalisation actuelle enregistrée comme nouveau préréglage !**\n**Titre :** {title}\nVous pouvez changer le titre en utilisant /customize /t [nouveau titre]",
-        "ru": "✅ **Текущая настройка сохранена как новая предустановка!**\n**Название:** {title}\nВы можете изменить название с помощью /customize /t [новое название]",
-        "ar": "✅ **تم حفظ التخصيص الحالي كـ Preset جديد!**\n**العنوان:** {title}\nيمكنك تغيير العنوان باستخدام /customize /t [عنوان جديد]"
+        "bn": "✅ **বর্তমান কাস্টমাইজেশন নতুন প্রিসেট হিসেবে সংরক্ষণ করা হয়েছে!**\n**শিরোনাম:** {title}\nআপনি /customize /t [নতুন শিরোনাম] ব্যবহার করে শিরোনাম পরিবর্তন করতে পারেন",
+        "hi": "✅ **वर्तमान कस्टमाइज़ेशन नए प्रीसैट के रूप में सहेजा गया!**\n**शीर्षक:** {title}\nआप /customize /t [नया शीर्षक] का उपयोग करके शीर्षक बदल सकते हैं"
     },
     "no_customization_to_save": {
         "en": "❌ No current customization to save.",
-        "sp": "❌ No hay personalización actual para guardar.",
-        "fr": "❌ Aucune personnalisation actuelle à enregistrer.",
-        "ru": "❌ Нет текущей настройки для сохранения.",
-        "ar": "❌ لا يوجد تخصيص حالي لحفظه."
+        "bn": "❌ সংরক্ষণ করার মতো কোনো বর্তমান কাস্টমাইজেশন নেই।",
+        "hi": "❌ सहेजने के लिए कोई वर्तमान कस्टमाइज़ेशन नहीं।"
     },
     "max_presets_reached": {
         "en": "❌ Maximum presets reached (10). Please delete one first.",
-        "sp": "❌ Se alcanzó el máximo de preajustes (10). Por favor, elimina uno primero.",
-        "fr": "❌ Nombre maximum de préréglages atteint (10). Veuillez d'abord en supprimer un.",
-        "ru": "❌ Достигнуто максимальное количество предустановок (10). Пожалуйста, сначала удалите одну.",
-        "ar": "❌ تم الوصول إلى الحد الأقصى للـ Presets (10). يرجى حذف واحد أولاً."
+        "bn": "❌ সর্বোচ্চ প্রিসেট পৌঁছেছে (১০টি)। প্রথমে একটি মুছুন।",
+        "hi": "❌ अधिकतम प्रीसैट पहुँच गया (10)। कृपया पहले एक हटाएँ।"
     },
     "preset_title_updated": {
         "en": "✅ **Preset title updated to:** {title}",
-        "sp": "✅ **Título del preajuste actualizado a:** {title}",
-        "fr": "✅ **Titre du préréglage mis à jour vers :** {title}",
-        "ru": "✅ **Название предустановки обновлено на:** {title}",
-        "ar": "✅ **تم تحديث عنوان الـ Preset إلى:** {title}"
+        "bn": "✅ **প্রিসেটের শিরোনাম আপডেট করা হয়েছে:** {title}",
+        "hi": "✅ **प्रीसैट शीर्षक अपडेट किया गया:** {title}"
     },
     "no_presets": {
         "en": "❌ No saved presets.",
-        "sp": "❌ No hay preajustes guardados.",
-        "fr": "❌ Aucun préréglage enregistré.",
-        "ru": "❌ Нет сохраненных предустановок.",
-        "ar": "❌ لا توجد Presets محفوظة."
+        "bn": "❌ কোনো সংরক্ষিত প্রিসেট নেই।",
+        "hi": "❌ कोई सहेजा गया प्रीसैट नहीं।"
     },
     "saved_presets": {
         "en": "📋 **Saved presets:**\n{list}\n\n💡 Use /customize /use [number] to activate a specific preset.",
-        "sp": "📋 **Preajustes guardados:**\n{list}\n\n💡 Usa /customize /use [número] para activar un preajuste específico.",
-        "fr": "📋 **Préréglages enregistrés :**\n{list}\n\n💡 Utilisez /customize /use [numéro] pour activer un préréglage spécifique.",
-        "ru": "📋 **Сохраненные предустановки:**\n{list}\n\n💡 Используйте /customize /use [номер] для активации конкретной предустановки.",
-        "ar": "📋 **الـ Presets المحفوظة:**\n{list}\n\n💡 استخدم /customize /use [رقم] لتفعيل الـ Preset المحدد."
+        "bn": "📋 **সংরক্ষিত প্রিসেট:**\n{list}\n\n💡 একটি নির্দিষ্ট প্রিসেট সক্রিয় করতে /customize /use [নম্বর] ব্যবহার করুন।",
+        "hi": "📋 **सहेजे गए प्रीसैट:**\n{list}\n\n💡 किसी विशिष्ट प्रीसैट को सक्रिय करने के लिए /customize /use [नंबर] का उपयोग करें।"
     },
     "preset_activated": {
         "en": "✅ **Preset activated:** {title}",
-        "sp": "✅ **¡Preajuste activado!** {title}",
-        "fr": "✅ **Préréglage activé :** {title}",
-        "ru": "✅ **Предустановка активирована:** {title}",
-        "ar": "✅ **تم تفعيل الـ Preset:** {title}"
+        "bn": "✅ **প্রিসেট সক্রিয় করা হয়েছে:** {title}",
+        "hi": "✅ **प्रीसैट सक्रिय किया गया:** {title}"
     },
     "invalid_preset_number": {
         "en": "❌ Invalid preset number.",
-        "sp": "❌ Número de preajuste inválido.",
-        "fr": "❌ Numéro de préréglage invalide.",
-        "ru": "❌ Неверный номер предустановки.",
-        "ar": "❌ رقم الـ Preset غير صالح."
+        "bn": "❌ ভুল প্রিসেট নম্বর।",
+        "hi": "❌ अमान्य प्रीसैट नंबर।"
     },
     "preset_deleted": {
         "en": "✅ **Preset deleted:** {title}",
-        "sp": "✅ **¡Preajuste eliminado!** {title}",
-        "fr": "✅ **Préréglage supprimé :** {title}",
-        "ru": "✅ **Предустановка удалена:** {title}",
-        "ar": "✅ **تم حذف الـ Preset:** {title}"
+        "bn": "✅ **প্রিসেট মুছে ফেলা হয়েছে:** {title}",
+        "hi": "✅ **प्रीसैट हटाया गया:** {title}"
     },
     "personality_customized": {
         "en": "✅ **Bot personality customized successfully!**\n**New personality:** {personality}\nWould you like to save this customization as a preset for later use?",
-        "sp": "✅ **¡Personalidad del bot personalizada con éxito!**\n**Nueva personalidad:** {personality}\n¿Te gustaría guardar esta personalización como preajuste para usarla más tarde?",
-        "fr": "✅ **Personnalité du bot personnalisée avec succès !**\n**Nouvelle personnalité :** {personality}\nSouhaitez-vous enregistrer cette personnalisation comme préréglage pour une utilisation ultérieure ?",
-        "ru": "✅ **Личность бота успешно настроена!**\n**Новая личность:** {personality}\nХотите сохранить эту настройку как предустановку для дальнейшего использования?",
-        "ar": "✅ **تم تخصيص شخصية البوت بنجاح!**\n**الشخصية الجديدة:** {personality}\nهل ترغب في حفظ هذا التخصيص كـ Preset لاستخدامه لاحقاً؟"
+        "bn": "✅ **বটের ব্যক্তিত্ব সফলভাবে কাস্টমাইজ করা হয়েছে!**\n**নতুন ব্যক্তিত্ব:** {personality}\nআপনি কি এই কাস্টমাইজেশনটি পরবর্তী ব্যবহারের জন্য প্রিসেট হিসেবে সংরক্ষণ করতে চান?",
+        "hi": "✅ **बॉट का व्यक्तित्व सफलतापूर्वक कस्टमाइज़ किया गया!**\n**नया व्यक्तित्व:** {personality}\nक्या आप इस कस्टमाइज़ेशन को बाद में उपयोग के लिए प्रीसैट के रूप में सहेजना चाहेंगे?"
     },
     "reset_to_default": {
         "en": "✅ **Bot personality reset to default settings.**",
-        "sp": "✅ **¡Personalidad del bot restablecida a la configuración predeterminada!**",
-        "fr": "✅ **Personnalité du bot réinitialisée aux paramètres par défaut.**",
-        "ru": "✅ **Личность бота сброшена к настройкам по умолчанию.**",
-        "ar": "✅ **تم إعادة تعيين شخصية البوت إلى الإعدادات الافتراضية.**"
+        "bn": "✅ **বটের ব্যক্তিত্ব ডিফল্ট সেটিংসে রিসেট করা হয়েছে।**",
+        "hi": "✅ **बॉट का व्यक्तित्व डिफ़ॉल्ट सेटिंग्स पर रीसेट किया गया।**"
     },
     "preset_save_skipped": {
         "en": "✅ **Preset save skipped.**",
-        "sp": "✅ **¡Guardado del preajuste omitido!**",
-        "fr": "✅ **Enregistrement du préréglage ignoré.**",
-        "ru": "✅ **Сохранение предустановки пропущено.**",
-        "ar": "✅ **تم تخطي حفظ الـ Preset.**"
+        "bn": "✅ **প্রিসেট সংরক্ষণ এড়িয়ে গেছে।**",
+        "hi": "✅ **प्रीसैट सहेजना छोड़ दिया गया।**"
     },
     "customization_cancelled": {
         "en": "✅ **Customization cancelled.**",
-        "sp": "✅ **¡Personalización cancelada!**",
-        "fr": "✅ **Personnalisation annulée.**",
-        "ru": "✅ **Настройка отменена.**",
-        "ar": "✅ **تم إلغاء التخصيص.**"
+        "bn": "✅ **কাস্টমাইজেশন বাতিল করা হয়েছে।**",
+        "hi": "✅ **कस्टमाइज़ेशन रद्द कर दिया गया।**"
     },
     "customization_options_closed": {
         "en": "Customization options closed.",
-        "sp": "Opciones de personalización cerradas.",
-        "fr": "Options de personnalisation fermées.",
-        "ru": "Опции настройки закрыты.",
-        "ar": "تم إغلاق خيارات التخصيص."
+        "bn": "কাস্টমাইজেশন অপশন বন্ধ করা হয়েছে।",
+        "hi": "कस्टमाइज़ेशन विकल्प बंद कर दिए गए।"
     },
-    "user_stats": {
-        "en": """📊 **Your Personal Statistics:**
-📨 Messages sent: {messages_sent}
-📩 Messages received: {messages_received}
-🤔 Thinking sessions (/think): {think}
-📋 Full analyses (/think_full): {think_full}
-🎭 Customizations: {customizations}
-📁 Presets saved: {presets_created}
-🔧 Presets used: {presets_used}
-🌐 Internet searches: {web_searches}
-⭐ Feedbacks submitted: {feedbacks_submitted}
-💾 **Memory status:**
-📝 Messages saved: {messages_saved}
-🕐 Oldest message saved: {oldest_days} days ago
-🎭 Custom personality: {custom_personality}
-📋 Number of presets: {presets_count}/10""",
-        "sp": """📊 **Tus estadísticas personales:**
-📨 Mensajes enviados: {messages_sent}
-📩 Mensajes recibidos: {messages_received}
-🤔 Sesiones de pensamiento (/think): {think}
-📋 Análisis completos (/think_full): {think_full}
-🎭 Personalizaciones: {customizations}
-📁 Preajustes guardados: {presets_created}
-🔧 Preajustes usados: {presets_used}
-🌐 Búsquedas en internet: {web_searches}
-⭐ Comentarios enviados: {feedbacks_submitted}
-💾 **Estado de la memoria:**
-📝 Mensajes guardados: {messages_saved}
-🕐 Mensaje más antiguo guardado: hace {oldest_days} días
-🎭 Personalidad personalizada: {custom_personality}
-📋 Número de preajustes: {presets_count}/10""",
-        "fr": """📊 **Vos statistiques personnelles :**
-📨 Messages envoyés : {messages_sent}
-📩 Messages reçus : {messages_received}
-🤔 Sessions de réflexion (/think) : {think}
-📋 Analyses complètes (/think_full) : {think_full}
-🎭 Personnalisations : {customizations}
-📁 Préréglages enregistrés : {presets_created}
-🔧 Préréglages utilisés : {presets_used}
-🌐 Recherches sur Internet : {web_searches}
-⭐ Commentaires soumis : {feedbacks_submitted}
-💾 **État de la mémoire :**
-📝 Messages enregistrés : {messages_saved}
-🕐 Message le plus ancien enregistré : il y a {oldest_days} jours
-🎭 Personnalité personnalisée : {custom_personality}
-📋 Nombre de préréglages : {presets_count}/10""",
-        "ru": """📊 **Ваши личные статистические данные:**
-📨 Отправленные сообщения: {messages_sent}
-📩 Полученные сообщения: {messages_received}
-🤔 Сессии размышления (/think): {think}
-📋 Полные анализы (/think_full): {think_full}
-🎭 Настройки: {customizations}
-📁 Сохраненные предустановки: {presets_created}
-🔧 Использованные предустановки: {presets_used}
-🌐 Поисковые запросы: {web_searches}
-⭐ Отправленные отзывы: {feedbacks_submitted}
-💾 **Состояние памяти:**
-📝 Сохраненные сообщения: {messages_saved}
-🕐 Самое старое сообщение: {oldest_days} дней назад
-🎭 Пользовательская личность: {custom_personality}
-📋 Количество предустановок: {presets_count}/10""",
-        "ar": """📊 **احصائياتك الشخصية:**
-📨 الرسائل المرسلة: {messages_sent}
-📩 الرسائل المستلمة: {messages_received}
-🤔 جلسات التفكير (/think): {think}
-📋 التحليلات الكاملة (/think_full): {think_full}
-🎭 التخصيصات: {customizations}
-📁 الـ Presets المحفوظة: {presets_created}
-🔧 الـ Presets المستخدمة: {presets_used}
-🌐 عمليات البحث: {web_searches}
-⭐ الملاحظات المرسلة: {feedbacks_submitted}
-💾 **حالة الذاكرة:**
-📝 الرسائل المحفوظة: {messages_saved}
-🕐 أقدم رسالة محفوظة: منذ {oldest_days} يوم
-🎭 شخصية مخصصة: {custom_personality}
-📋 عدد الـ Presets: {presets_count}/10"""
+    "enter_search_query": {
+        "en": "⚠️ Please send search query after the command. Example: /web Gold price today in Egypt",
+        "bn": "⚠️ অনুগ্রহ করে কমান্ডের পরে সার্চ কুয়েরি পাঠান। উদাহরণ: /web আজ মিশরে সোনার দাম",
+        "hi": "⚠️ कृपया कमांड के बाद खोज क्वेरी भेजें। उदाहरण: /web आज मिस्र में सोने की कीमत"
     },
-    "no_stats": {
-        "en": "📊 No statistics yet.",
-        "sp": "📊 Todavía no hay estadísticas.",
-        "fr": "📊 Aucune statistique pour le moment.",
-        "ru": "📊 Статистика еще не собрана.",
-        "ar": "📊 لا توجد احصائيات حتى الآن."
+    "enter_think_query": {
+        "en": "⚠️ Please send text to think about after the command. Example: /think What is the meaning of life?",
+        "bn": "⚠️ অনুগ্রহ করে কমান্ডের পরে চিন্তা করার টেক্সট পাঠান। উদাহরণ: /think জীবনের অর্থ কী?",
+        "hi": "⚠️ कृपया कमांड के बाद विचार करने के लिए टेक्स्ट भेजें। उदाहरण: /think जीवन का अर्थ क्या है?"
     },
-    "general_user_stats": {
-        "en": """📈 **General User Statistics:**
-👥 Total users: {total_users}
-✅ Active users (less than 1 day): {awake_users}
-💤 Sleeping users (2-6 days): {sleeping_users}
-❌ Inactive users (more than 7 days): {dead_users}
-⭐ Total feedbacks: {total_feedbacks}
-⏰ Last update: {last_updated}
-💡 **Notes:**
-- Active user: Interaction within last 24 hours
-- Sleeping user: Interaction 2-6 days ago  
-- Inactive user: No interaction for more than 7 days
-📝 **Recent feedbacks:**{feedbacks}
-Use /feedback [your opinion] to send your feedback about the bot!""",
-        "sp": """📈 **Estadísticas generales de usuarios:**
-👥 Total de usuarios: {total_users}
-✅ Usuarios activos (menos de 1 día): {awake_users}
-💤 Usuarios dormidos (2-6 días): {sleeping_users}
-❌ Usuarios inactivos (más de 7 días): {dead_users}
-⭐ Total de comentarios: {total_feedbacks}
-⏰ Última actualización: {last_updated}
-💡 **Notas:**
-- Usuario activo: Interacción en las últimas 24 horas
-- Usuario dormido: Interacción hace 2-6 días  
-- Usuario inactivo: Sin interacción durante más de 7 días
-📝 **Comentarios recientes:**{feedbacks}
-¡Usa /feedback [tu opinión] para enviar tu comentario sobre el bot!""",
-        "fr": """📈 **Statistiques générales des utilisateurs :**
-👥 Utilisateurs totaux : {total_users}
-✅ Utilisateurs actifs (moins de 1 jour) : {awake_users}
-💤 Utilisateurs dormant (2-6 jours) : {sleeping_users}
-❌ Utilisateurs inactifs (plus de 7 jours) : {dead_users}
-⭐ Commentaires totaux : {total_feedbacks}
-⏰ Dernière mise à jour : {last_updated}
-💡 **Notes :**
-- Utilisateur actif : Interaction dans les dernières 24 heures
-- Utilisateur dormant : Interaction il y a 2-6 jours  
-- Utilisateur inactif : Aucune interaction depuis plus de 7 jours
-📝 **Commentaires récents :**{feedbacks}
-Utilisez /feedback [votre avis] pour envoyer votre avis sur le bot !""",
-        "ru": """📈 **Общая статистика пользователей:**
-👥 Всего пользователей: {total_users}
-✅ Активные пользователи (менее 1 дня): {awake_users}
-💤 Спящие пользователи (2-6 дней): {sleeping_users}
-❌ Неактивные пользователи (более 7 дней): {dead_users}
-⭐ Всего отзывов: {total_feedbacks}
-⏰ Последнее обновление: {last_updated}
-💡 **Примечания:**
-- Активный пользователь: Взаимодействие в последние 24 часа
-- Спящий пользователь: Взаимодействие 2-6 дней назад  
-- Неактивный пользователь: Нет взаимодействия более 7 дней
-📝 **Недавние отзывы:**{feedbacks}
-Используйте /feedback [ваше мнение], чтобы отправить отзыв о боте!""",
-        "ar": """📈 **احصائيات عامة للمستخدمين:**
-👥 إجمالي المستخدمين: {total_users}
-✅ المستخدمين النشطين (أقل من يوم): {awake_users}
-💤 المستخدمين النائمين (2-6 أيام): {sleeping_users}
-❌ المستخدمين غير النشطين (أكثر من 7 أيام): {dead_users}
-⭐ إجمالي الملاحظات: {total_feedbacks}
-⏰ آخر تحديث: {last_updated}
-💡 **ملاحظات:**
-- المستخدم النشط: تفاعل في آخر 24 ساعة
-- المستخدم النائم: تفاعل منذ 2-6 أيام  
-- المستخدم غير النشط: لا يوجد تفاعل منذ أكثر من 7 أيام
-📝 **الملاحظات الحديثة:**{feedbacks}
-استخدم /feedback [رايك] لإرسال ملاحظتك عن البوت!"""
+    "error_analysis": {
+        "en": "❌ Error during analysis. Please try again later.",
+        "bn": "❌ বিশ্লেষণের সময় ত্রুটি হয়েছে। অনুগ্রহ করে পরে আবার চেষ্টা করুন।",
+        "hi": "❌ विश्लेषण के दौरान त्रुटि। कृपया बाद में पुनः प्रयास करें।"
     },
-    "no_recent_feedbacks": {
-        "en": "\nNo recent feedbacks.",
-        "sp": "\nNo hay comentarios recientes.",
-        "fr": "\nAucun commentaire récent.",
-        "ru": "\nНет недавних отзывов.",
-        "ar": "\nلا توجد ملاحظات حديثة."
+    "error_search": {
+        "en": "❌ Error during search. Please try again later.",
+        "bn": "❌ সার্চের সময় ত্রুটি হয়েছে। অনুগ্রহ করে পরে আবার চেষ্টা করুন।",
+        "hi": "❌ खोज के दौरान त्रुटि। कृपया बाद में पुनः प्रयास करें।"
+    },
+    "error_thinking": {
+        "en": "❌ Error during deep thinking. Please try again later.",
+        "bn": "❌ গভীর চিন্তার সময় ত্রুটি হয়েছে। অনুগ্রহ করে পরে আবার চেষ্টা করুন।",
+        "hi": "❌ गहन विचार के दौरान त्रुटि। कृपया बाद में पुनः प्रयास करें।"
+    },
+    "error_merging": {
+        "en": "⚠️ Could not merge all perspectives due to content length. Showing first 3 perspectives only.",
+        "bn": "⚠️ কন্টেন্টের দৈর্ঘ্যের কারণে সব দৃষ্টিকোণ মার্জ করা সম্ভব হয়নি। শুধু প্রথম ৩টি দৃষ্টিকোণ দেখানো হচ্ছে।",
+        "hi": "⚠️ सामग्री की लंबाई के कारण सभी परिप्रेक्ष्यों को मर्ज नहीं किया जा सका। केवल पहले 3 परिप्रेक्ष्य दिखा रहा हूँ।"
+    },
+    "error_processing": {
+        "en": "Sorry, an error occurred during processing. Please try later.",
+        "bn": "দুঃখিত, প্রসেসিংয়ের সময় একটি ত্রুটি হয়েছে। অনুগ্রহ করে পরে চেষ্টা করুন।",
+        "hi": "क्षमा करें, प्रोसेसिंग के दौरान एक त्रुटि हुई। कृपया बाद में प्रयास करें।"
+    },
+    "error_command": {
+        "en": "Sorry, an error occurred processing the command. Please try later.",
+        "bn": "দুঃখিত, কমান্ড প্রসেসিংয়ের সময় একটি ত্রুটি হয়েছে। অনুগ্রহ করে পরে চেষ্টা করুন।",
+        "hi": "क्षमा करें, कमांड प्रोसेसिंग के दौरान एक त्रुटि हुई। कृपया बाद में प्रयास करें।"
+    },
+    "error_showing_stats": {
+        "en": "Sorry, an error occurred showing statistics. Please try later.",
+        "bn": "দুঃখিত, পরিসংখ্যান দেখানোর সময় একটি ত্রুটি হয়েছে। অনুগ্রহ করে পরে চেষ্টা করুন।",
+        "hi": "क्षमा करें, आंकड़े दिखाने के दौरान एक त्रुटि हुई। कृपया बाद में प्रयास करें।"
+    },
+    "error_sending_feedback": {
+        "en": "Sorry, an error occurred sending feedback. Please try later.",
+        "bn": "দুঃখিত, ফিডব্যাক পাঠানোর সময় একটি ত্রুটি হয়েছে। অনুগ্রহ করে পরে চেষ্টা করুন।",
+        "hi": "क्षमा करें, फीडबैक भेजने के दौरान एक त्रुटि हुई। कृपया बाद में प्रयास करें।"
+    },
+    "error_showing_credits": {
+        "en": "Sorry, an error occurred showing credits. Please try later.",
+        "bn": "দুঃখিত, ক্রেডিট দেখানোর সময় একটি ত্রুটি হয়েছে। অনুগ্রহ করে পরে চেষ্টা করুন।",
+        "hi": "क्षमा करें, क्रेडिट दिखाने के दौरान एक त्रुटि हुई। कृपया बाद में प्रयास करें।"
+    },
+    "error_showing_server_info": {
+        "en": "Sorry, an error occurred showing server information. Please try later.",
+        "bn": "দুঃখিত, সার্ভারের তথ্য দেখানোর সময় একটি ত্রুটি হয়েছে। অনুগ্রহ করে পরে চেষ্টা করুন।",
+        "hi": "क्षमा करें, सर्वर जानकारी दिखाने के दौरान एक त्रुटि हुई। कृपया बाद में प्रयास करें।"
+    },
+    "language_changed": {
+        "en": "✅ Language changed to {language}!",
+        "bn": "✅ ভাষা {language} এ পরিবর্তন করা হয়েছে!",
+        "hi": "✅ भाषा {language} में बदल दी गई!"
+    },
+    "unsupported_language": {
+        "en": "❌ Unsupported language code. Supported codes: {codes}",
+        "bn": "❌ অসমর্থিত ভাষা কোড। সমর্থিত কোড: {codes}",
+        "hi": "❌ असमर्थित भाषा कोड। समर्थित कोड: {codes}"
+    },
+    "bot_status_online": {
+        "en": "✅ Bot operating normally",
+        "bn": "✅ বট স্বাভাবিকভাবে কাজ করছে",
+        "hi": "✅ बॉट सामान्य रूप से काम कर रहा है"
+    },
+    "bot_status_offline": {
+        "en": "⏸️ Bot offline since: {duration}",
+        "bn": "⏸️ বট অফলাইন: {duration}",
+        "hi": "⏸️ बॉट ऑफलाइन: {duration}"
     },
     "feedback_sent": {
         "en": """⭐ **Thank you for your feedback!**
 We greatly appreciate user opinions to improve and develop the bot.
 Your feedback will be read carefully and your notes will be taken into consideration.
 You can send new feedback {days_left} days from now.""",
-        "sp": """⭐ **¡Gracias por tu comentario!**
-Apreciamos mucho las opiniones de los usuarios para mejorar y desarrollar el bot.
-Tu comentario será leído cuidadosamente y tus notas serán tomadas en consideración.
-Puedes enviar nuevos comentarios en {days_left} días.""",
-        "fr": """⭐ **Merci pour votre avis !**
-Nous apprécions grandement les opinions des utilisateurs pour améliorer et développer le bot.
-Votre avis sera lu attentivement et vos remarques seront prises en compte.
-Vous pouvez envoyer un nouvel avis dans {days_left} jours.""",
-        "ru": """⭐ **Спасибо за ваш отзыв!**
-Мы очень ценим мнения пользователей для улучшения и развития бота.
-Ваш отзыв будет внимательно изучен, и ваши замечания будут учтены.
-Вы можете отправить новый отзыв через {days_left} дней.""",
-        "ar": """⭐ **شكراً لملاحظتك!**
-نحن نقدر آراء المستخدمين لتحسين وتطوير البوت.
-سيتم قراءة ملاحظتك بعناية وستؤخذ ملاحظاتك في الاعتبار.
-يمكنك إرسال ملاحظة جديدة بعد {days_left} يوم."""
+        "bn": """⭐ **আপনার ফিডব্যাকের জন্য ধন্যবাদ!**
+আমরা বট উন্নয়নের জন্য ব্যবহারকারীদের মতামতকে অত্যন্ত গুরুত্ব দিই।
+আপনার ফিডব্যাক মনোযোগ সহকারে পড়া হবে এবং আপনার নোটগুলি বিবেচনায় নেওয়া হবে।
+আপনি {days_left} দিন পর নতুন ফিডব্যাক পাঠাতে পারবেন।""",
+        "hi": """⭐ **आपके फीडबैक के लिए धन्यवाद!**
+हम बॉट को बेहतर बनाने के लिए उपयोगकर्ताओं की राय को अत्यधिक महत्व देते हैं।
+आपका फीडबैक ध्यान से पढ़ा जाएगा और आपके नोट्स पर विचार किया जाएगा।
+आप {days_left} दिन बाद नया फीडबैक भेज सकते हैं।"""
     },
     "feedback_waiting": {
         "en": "⏳ You can send new feedback after {days} day/s. Thank you for your interest!",
-        "sp": "⏳ Puedes enviar nuevos comentarios después de {days} día/s. ¡Gracias por tu interés!",
-        "fr": "⏳ Vous pouvez envoyer de nouveaux commentaires après {days} jour(s). Merci pour votre intérêt !",
-        "ru": "⏳ Вы можете отправить новый отзыв через {days} день(ей). Спасибо за ваш интерес!",
-        "ar": "⏳ يمكنك إرسال ملاحظة جديدة بعد {days} يوم/أيام. شكراً لاهتمامك!"
+        "bn": "⏳ আপনি {days} দিন পর নতুন ফিডব্যাক পাঠাতে পারবেন। আপনার আগ্রহের জন্য ধন্যবাদ!",
+        "hi": "⏳ आप {days} दिन बाद नया फीडबैक भेज सकते हैं। आपकी रुचि के लिए धन्यवाद!"
     },
     "developer_info": {
         "en": """👨‍💻 **Developer Information:**
 **Bot Developer:** HAKORA
 **Twitter:** https://x.com/HAKORAdev/""",
-        "sp": """👨‍💻 **Información del desarrollador:**
-**Desarrollador del bot:** HAKORA
-**Twitter:** https://x.com/HAKORAdev/""",
-        "fr": """👨‍💻 **Informations sur le développeur :**
-**Développeur du bot :** HAKORA
-**Twitter :** https://x.com/HAKORAdev/""",
-        "ru": """👨‍💻 **Информация о разработчике:**
-**Разработчик бота:** HAKORA
-**Twitter:** https://x.com/HAKORAdev/""",
-        "ar": """👨‍💻 **معلومات المطور:**
-**مطور البوت:** HAKORA
-**تويتر:** https://x.com/HAKORAdev/"""
+        "bn": """👨‍💻 **ডেভেলপারের তথ্য:**
+**বট ডেভেলপার:** HAKORA
+**টুইটার:** https://x.com/HAKORAdev/""",
+        "hi": """👨‍💻 **डेवलपर जानकारी:**
+**बॉट डेवलपर:** HAKORA
+**ट्विटर:** https://x.com/HAKORAdev/"""
     },
-    "server_info": {
-        "en": """🖥️ **Server and Performance Information:**
-⏰ **Uptime:** {uptime}
-🔧 **CPU Information:**
-- Current usage: {cpu_percent}%
-- Core count: {cpu_count}
-- Current frequency: {cpu_freq_current} MHz
-- Max frequency: {cpu_freq_max} MHz
-💾 **Memory Information (RAM):**
-- Total: {memory_total:.2f} GB
-- Used: {memory_used:.2f} GB
-- Percentage: {memory_percent}%
-💿 **Storage Information (Disk):**
-- Total: {disk_total:.2f} GB
-- Used: {disk_used:.2f} GB
-- Percentage: {disk_percent}%
-📊 **Bot Statistics:**
-- Total messages processed: {total_messages}
-- Messages today: {messages_today}
-- Messages this week: {messages_week}
-- Messages this month: {messages_month}
-- Active users today: {users_today}
-- Active users this week: {users_week}
-- Active users this month: {users_month}
-🔄 **Bot Status:**
-{bot_status}""",
-        "sp": """🖥️ **Información del servidor y rendimiento:**
-⏰ **Tiempo activo:** {uptime}
-🔧 **Información de CPU:**
-- Uso actual: {cpu_percent}%
-- Número de núcleos: {cpu_count}
-- Frecuencia actual: {cpu_freq_current} MHz
-- Frecuencia máxima: {cpu_freq_max} MHz
-💾 **Información de memoria (RAM):**
-- Total: {memory_total:.2f} GB
-- Usado: {memory_used:.2f} GB
-- Porcentaje: {memory_percent}%
-💿 **Información de almacenamiento (Disco):**
-- Total: {disk_total:.2f} GB
-- Usado: {disk_used:.2f} GB
-- Porcentaje: {disk_percent}%
-📊 **Estadísticas del bot:**
-- Total de mensajes procesados: {total_messages}
-- Mensajes hoy: {messages_today}
-- Mensajes esta semana: {messages_week}
-- Mensajes este mes: {messages_month}
-- Usuarios activos hoy: {users_today}
-- Usuarios activos esta semana: {users_week}
-- Usuarios activos este mes: {users_month}
-🔄 **Estado del bot:**
-{bot_status}""",
-        "fr": """🖥️ **Informations sur le serveur et les performances :**
-⏰ **Temps d'activité :** {uptime}
-🔧 **Informations sur le CPU :**
-- Utilisation actuelle : {cpu_percent}%
-- Nombre de cœurs : {cpu_count}
-- Fréquence actuelle : {cpu_freq_current} MHz
-- Fréquence maximale : {cpu_freq_max} MHz
-💾 **Informations sur la mémoire (RAM) :**
-- Total : {memory_total:.2f} GB
-- Utilisé : {memory_used:.2f} GB
-- Pourcentage : {memory_percent}%
-💿 **Informations sur le stockage (Disque) :**
-- Total : {disk_total:.2f} GB
-- Utilisé : {disk_used:.2f} GB
-- Pourcentage : {disk_percent}%
-📊 **Statistiques du bot :**
-- Total des messages traités : {total_messages}
-- Messages aujourd'hui : {messages_today}
-- Messages cette semaine : {messages_week}
-- Messages ce mois : {messages_month}
-- Utilisateurs actifs aujourd'hui : {users_today}
-- Utilisateurs actifs cette semaine : {users_week}
-- Utilisateurs actifs ce mois : {users_month}
-🔄 **État du bot :**
-{bot_status}""",
-        "ru": """🖥️ **Информация о сервере и производительности:**
-⏰ **Время работы:** {uptime}
-🔧 **Информация о CPU:**
-- Текущее использование: {cpu_percent}%
-- Количество ядер: {cpu_count}
-- Текущая частота: {cpu_freq_current} МГц
-- Максимальная частота: {cpu_freq_max} МГц
-💾 **Информация о памяти (RAM):**
-- Всего: {memory_total:.2f} ГБ
-- Использовано: {memory_used:.2f} ГБ
-- Процент: {memory_percent}%
-💿 **Информация о хранилище (Диск):**
-- Всего: {disk_total:.2f} ГБ
-- Использовано: {disk_used:.2f} ГБ
-- Процент: {disk_percent}%
-📊 **Статистика бота:**
-- Всего обработанных сообщений: {total_messages}
-- Сообщений сегодня: {messages_today}
-- Сообщений на этой неделе: {messages_week}
-- Сообщений в этом месяце: {messages_month}
-- Активных пользователей сегодня: {users_today}
-- Активных пользователей на этой неделе: {users_week}
-- Активных пользователей в этом месяце: {users_month}
-🔄 **Состояние бота:**
-{bot_status}""",
-        "ar": """🖥️ **معلومات السيرفر والأداء:**
-⏰ **وقت التشغيل:** {uptime}
-🔧 **معلومات المعالج:**
-- الاستخدام الحالي: {cpu_percent}%
-- عدد النوى: {cpu_count}
-- التردد الحالي: {cpu_freq_current} ميجا هيرتز
-- التردد الأقصى: {cpu_freq_max} ميجا هيرتز
-💾 **معلومات الذاكرة (RAM):**
-- الإجمالي: {memory_total:.2f} جيجا بايت
-- المستخدم: {memory_used:.2f} جيجا بايت
-- النسبة: {memory_percent}%
-💿 **معلومات التخزين (القرص):**
-- الإجمالي: {disk_total:.2f} جيجا بايت
-- المستخدم: {disk_used:.2f} جيجا بايت
-- النسبة: {disk_percent}%
-📊 **احصائيات البوت:**
-- إجمالي الرسائل المعالجة: {total_messages}
-- الرسائل اليوم: {messages_today}
-- الرسائل هذا الأسبوع: {messages_week}
-- الرسائل هذا الشهر: {messages_month}
-- المستخدمين النشطين اليوم: {users_today}
-- المستخدمين النشطين هذا الأسبوع: {users_week}
-- المستخدمين النشطين هذا الشهر: {users_month}
-🔄 **حالة البوت:**
-{bot_status}"""
+    "no_recent_feedbacks": {
+        "en": "\nNo recent feedbacks.",
+        "bn": "\nকোনো সাম্প্রতিক ফিডব্যাক নেই।",
+        "hi": "\nकोई हालिया फीडबैक नहीं।"
     },
-    "bot_status_online": {
-        "en": "✅ Bot operating normally",
-        "sp": "✅ Bot operando normalmente",
-        "fr": "✅ Bot fonctionne normalement",
-        "ru": "✅ Бот работает нормально",
-        "ar": "✅ البوت يعمل بشكل طبيعي"
-    },
-    "bot_status_offline": {
-        "en": "⏸️ Bot offline since: {duration}",
-        "sp": "⏸️ Bot fuera de línea desde: {duration}",
-        "fr": "⏸️ Bot hors ligne depuis : {duration}",
-        "ru": "⏸️ Бот отключен с: {duration}",
-        "ar": "⏸️ البوت غير متصل منذ: {duration}"
-    },
-    "error_processing": {
-        "en": "Sorry, an error occurred during processing. Please try later.",
-        "sp": "Lo sentimos, ocurrió un error durante el procesamiento. Por favor, inténtalo más tarde.",
-        "fr": "Désolé, une erreur s'est produite lors du traitement. Veuillez réessayer plus tard.",
-        "ru": "Извините, произошла ошибка при обработке. Пожалуйста, попробуйте позже.",
-        "ar": "عذراً، حدث خطأ أثناء المعالجة. يرجى المحاولة لاحقاً."
-    },
-    "error_command": {
-        "en": "Sorry, an error occurred processing the command. Please try later.",
-        "sp": "Lo sentimos, ocurrió un error al procesar el comando. Por favor, inténtalo más tarde.",
-        "fr": "Désolé, une erreur s'est produite lors du traitement de la commande. Veuillez réessayer plus tard.",
-        "ru": "Извините, произошла ошибка при обработке команды. Пожалуйста, попробуйте позже.",
-        "ar": "عذراً، حدث خطأ أثناء معالجة الأمر. يرجى المحاولة لاحقاً."
-    },
-    "error_showing_stats": {
-        "en": "Sorry, an error occurred showing statistics. Please try later.",
-        "sp": "Lo sentimos, ocurrió un error al mostrar las estadísticas. Por favor, inténtalo más tarde.",
-        "fr": "Désolé, une erreur s'est produite lors de l'affichage des statistiques. Veuillez réessayer plus tard.",
-        "ru": "Извините, произошла ошибка при отображении статистики. Пожалуйста, попробуйте позже.",
-        "ar": "عذراً، حدث خطأ أثناء عرض الاحصائيات. يرجى المحاولة لاحقاً."
-    },
-    "error_sending_feedback": {
-        "en": "Sorry, an error occurred sending feedback. Please try later.",
-        "sp": "Lo sentimos, ocurrió un error al enviar el comentario. Por favor, inténtalo más tarde.",
-        "fr": "Désolé, une erreur s'est produite lors de l'envoi du commentaire. Veuillez réessayer plus tard.",
-        "ru": "Извините, произошла ошибка при отправке отзыва. Пожалуйста, попробуйте позже.",
-        "ar": "عذراً، حدث خطأ أثناء إرسال الملاحظة. يرجى المحاولة لاحقاً."
-    },
-    "error_showing_credits": {
-        "en": "Sorry, an error occurred showing credits. Please try later.",
-        "sp": "Lo sentimos, ocurrió un error al mostrar los créditos. Por favor, inténtalo más tarde.",
-        "fr": "Désolé, une erreur s'est produite lors de l'affichage des crédits. Veuillez réessayer plus tard.",
-        "ru": "Извините, произошла ошибка при отображении информации о разработчике. Пожалуйста, попробуйте позже.",
-        "ar": "عذراً، حدث خطأ أثناء عرض معلومات المطور. يرجى المحاولة لاحقاً."
-    },
-    "error_showing_server_info": {
-        "en": "Sorry, an error occurred showing server information. Please try later.",
-        "sp": "Lo sentimos, ocurrió un error al mostrar la información del servidor. Por favor, inténtalo más tarde.",
-        "fr": "Désolé, une erreur s'est produite lors de l'affichage des informations sur le serveur. Veuillez réessayer plus tard.",
-        "ru": "Извините, произошла ошибка при отображении информации о сервере. Пожалуйста, попробуйте позже.",
-        "ar": "عذراً، حدث خطأ أثناء عرض معلومات السيرفر. يرجى المحاولة لاحقاً."
-    },
-    "language_changed": {
-        "en": "✅ Language changed to {language}!",
-        "sp": "✅ ¡Idioma cambiado a {language}!",
-        "fr": "✅ Langue changée en {language} !",
-        "ru": "✅ Язык изменен на {language}!",
-        "ar": "✅ تم تغيير اللغة إلى {language}!"
-    },
-    "unsupported_language": {
-        "en": "❌ Unsupported language code. Supported codes: {codes}",
-        "sp": "❌ Código de idioma no soportado. Códigos soportados: {codes}",
-        "fr": "❌ Code de langue non pris en charge. Codes pris en charge : {codes}",
-        "ru": "❌ Неподдерживаемый код языка. Поддерживаемые коды: {codes}",
-        "ar": "❌ رمز لغة غير مدعوم. الرموز المدعومة: {codes}"
-    },
-    "enter_search_query": {
-        "en": "⚠️ Please send search query after the command. Example: /web Gold price today in Egypt",
-        "sp": "⚠️ Por favor, envía la consulta de búsqueda después del comando. Ejemplo: /web Precio del oro hoy en Egipto",
-        "fr": "⚠️ Veuillez envoyer la requête de recherche après la commande. Exemple : /web Prix de l'or aujourd'hui en Égypte",
-        "ru": "⚠️ Пожалуйста, отправьте поисковый запрос после команды. Пример: /web Цена золота сегодня в Египте",
-        "ar": "⚠️ يرجى إرسال استعلام البحث بعد الأمر. مثال: /web سعر الذهب اليوم في مصر"
-    },
-    "enter_think_query": {
-        "en": "⚠️ Please send text to think about after the command. Example: /think What is the meaning of life?",
-        "sp": "⚠️ Por favor, envía el texto para reflexionar después del comando. Ejemplo: /think ¿Cuál es el significado de la vida?",
-        "fr": "⚠️ Veuillez envoyer le texte à réfléchir après la commande. Exemple : /think Quel est le sens de la vie ?",
-        "ru": "⚠️ Пожалуйста, отправьте текст для размышления после команды. Пример: /think Каков смысл жизни?",
-        "ar": "⚠️ يرجى إرسال النص للتفكير فيه بعد الأمر. مثال: /think ما هو معنى الحياة؟"
-    },
-    "error_analysis": {
-        "en": "❌ Error during analysis. Please try again later.",
-        "sp": "❌ Error durante el análisis. Por favor, inténtalo de nuevo más tarde.",
-        "fr": "❌ Erreur lors de l'analyse. Veuillez réessayer plus tard.",
-        "ru": "❌ Ошибка во время анализа. Пожалуйста, попробуйте позже.",
-        "ar": "❌ خطأ أثناء التحليل. يرجى المحاولة لاحقاً."
-    },
-    "error_search": {
-        "en": "❌ Error during search. Please try again later.",
-        "sp": "❌ Error durante la búsqueda. Por favor, inténtalo de nuevo más tarde.",
-        "fr": "❌ Erreur lors de la recherche. Veuillez réessayer plus tard.",
-        "ru": "❌ Ошибка во время поиска. Пожалуйста, попробуйте позже.",
-        "ar": "❌ خطأ أثناء البحث. يرجى المحاولة لاحقاً."
-    },
-    "error_thinking": {
-        "en": "❌ Error during deep thinking. Please try again later.",
-        "sp": "❌ Error durante el pensamiento profundo. Por favor, inténtalo de nuevo más tarde.",
-        "fr": "❌ Erreur lors de la réflexion approfondie. Veuillez réessayer plus tard.",
-        "ru": "❌ Ошибка во время глубокого осмысления. Пожалуйста, попробуйте позже.",
-        "ar": "❌ خطأ أثناء التفكير العميق. يرجى المحاولة لاحقاً."
-    },
-    "error_merging": {
-        "en": "⚠️ Could not merge all perspectives due to content length. Showing first 3 perspectives only.",
-        "sp": "⚠️ No se pudieron fusionar todas las perspectivas debido a la longitud del contenido. Mostrando solo las primeras 3 perspectivas.",
-        "fr": "⚠️ Impossible de fusionner toutes les perspectives en raison de la longueur du contenu. Affichage des 3 premières perspectives uniquement.",
-        "ru": "⚠️ Не удалось объединить все перспективы из-за длины содержимого. Отображаются только первые 3 перспективы.",
-        "ar": "⚠️ لا يمكن دمج جميع وجهات النظر بسبب طول المحتوى. عرض أول 3 وجهات نظر فقط."
+    "enter_feedback_query": {
+        "en": "⚠️ Please send your opinion after the command. Example: /feedback The bot is great!",
+        "bn": "⚠️ অনুগ্রহ করে কমান্ডের পরে আপনার মতামত পাঠান। উদাহরণ: /feedback বটটি খুব ভালো!",
+        "hi": "⚠️ कृपया कमांड के बाद अपनी राय भेजें। उदाहरण: /feedback बॉट बहुत अच्छा है!"
     }
 }
 
@@ -1037,6 +552,9 @@ def get_translation(user_id, key, **kwargs):
     try:
         user_memory = get_user_memory(user_id)
         language = user_memory.get("language", DEFAULT_LANGUAGE)
+        # যদি ভাষা না থাকে তাহলে ডিফল্ট ইংরেজি
+        if language not in LANGUAGE_STRINGS[key]:
+            language = "en"
         text = LANGUAGE_STRINGS[key][language]
         return text.format(**kwargs)
     except Exception as e:
@@ -2425,6 +1943,12 @@ async def set_russian(update: Update, context: ContextTypes.DEFAULT_TYPE):
 async def set_arabic(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await set_language(update, context, "ar")
 
+async def set_bengali(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    await set_language(update, context, "bn")
+
+async def set_hindi(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    await set_language(update, context, "hi")
+
 async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     try:
         user_id = str(update.effective_user.id)
@@ -2551,6 +2075,8 @@ async def main():
     application.add_handler(CommandHandler("fr", set_french))
     application.add_handler(CommandHandler("ru", set_russian))
     application.add_handler(CommandHandler("ar", set_arabic))
+    application.add_handler(CommandHandler("bn", set_bengali))
+    application.add_handler(CommandHandler("hi", set_hindi))
     
     application.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_message))
     
